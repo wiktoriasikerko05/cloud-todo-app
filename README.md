@@ -1,16 +1,65 @@
-# React + Vite
+# Aplikacja TO-DO z synchronizacją w chmurze 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projekt zrealizowany w ramach praktyk zawodowych. Jest to aplikacja typu "Lista Zadań" z funkcją synchronizacji danych w czasie rzeczywistym między urządzeniami (Real-Time Cloud Sync).
 
-Currently, two official plugins are available:
+1. Analiza Wymagań 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cel projektu:
+Stworzenie narzędzia zwiększającego produktywność, eliminującego problem braku spójności danych między urządzeniami użytkownika (np. laptop i telefon).
 
-## React Compiler
+Wymagania Funkcjonalne:
+Dodawanie zadań: Użytkownik może wprowadzić tekst i dodać go do listy.
+Synchronizacja Real-Time: Zmiany są natychmiast widoczne na innych urządzeniach (wykorzystanie WebSocket).
+Oznaczanie statusu: Interaktywne checkboxy zmieniają stan zadania na "wykonane" (zmienia się styl graficzny).
+Usuwanie: Możliwość trwałego usunięcia zadania z bazy danych.
+Trwałość danych: Zadania są zapisywane w chmurze i nie znikają po odświeżeniu strony.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Wymagania Niefunkcjonalne:
+* Responsywność (RWD) – poprawne działanie na PC i Mobile.
+* Niskie opóźnienie synchronizacji (< 1s).
+* Przejrzysty interfejs użytkownika (UI).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Projekt Architektury
+
+Stos technologiczny:
+Frontend: React.js + Vite
+Język: JavaScript
+Baza Danych (Backend): Google Firebase Firestore
+Komunikacja: Firebase SDK
+Stylizacja: CSS3.
+
+Przepływ danych:
+`[Użytkownik] <-> [React App] <-> [Google Cloud Firestore] <-> [Inne Urządzenia]`
+
+
+
+3. Instrukcja Uruchomienia
+
+Aby uruchomić projekt lokalnie:
+
+1.  Sklonuj repozytorium lub pobierz pliki.
+2.  Zainstaluj zależności (wymaga Node.js):
+    ```bash
+    npm install
+    ```
+3.  Uruchom serwer deweloperski:
+    ```bash
+    npm run dev
+    ```
+4.  Otwórz w przeglądarce adres: `http://localhost:5173`
+
+
+
+4. Raport z Testów
+
+Aplikacja przeszła pomyślnie następujące scenariusze testowe:
+
+| ID | Test | Wynik |
+| **01** | Synchronizacja między dwoma oknami przeglądarki | ✅ Pozytywny |
+| **02** | Zapisywanie zadań w bazie Firestore | ✅ Pozytywny |
+| **03** | Trwałość danych po odświeżeniu (F5) | ✅ Pozytywny |
+| **04** | Poprawne wyświetlanie na PC i Mobile | ✅ Pozytywny |
+| **05** | Obsługa usuwania i edycji statusu | ✅ Pozytywny |
+
+
