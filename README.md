@@ -15,7 +15,6 @@ Usuwanie: Możliwość trwałego usunięcia zadania z bazy danych.
 Trwałość danych: Zadania są zapisywane w chmurze i nie znikają po odświeżeniu strony.
 
 Wymagania Niefunkcjonalne:
-* Responsywność (RWD) – poprawne działanie na PC i Mobile.
 * Niskie opóźnienie synchronizacji (< 1s).
 * Przejrzysty interfejs użytkownika (UI).
 
