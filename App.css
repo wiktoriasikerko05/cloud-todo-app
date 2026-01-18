@@ -19,7 +19,7 @@ body {
   height: fit-content;
 }
 
-/* --- FIX 1: TITLE ON ONE LINE --- */
+
 h1 {
   text-align: center;
   color: #333;
@@ -33,7 +33,7 @@ h1 {
   white-space: nowrap; /* Forces one line */
 }
 
-/* --- THE INPUT BAR --- */
+
 .form {
   display: flex;
   gap: 10px;
@@ -66,7 +66,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover { background: #3f51b5; }
 
-/* --- LIST --- */
+
 ul { list-style: none; padding: 0; }
 
 li {
@@ -77,19 +77,19 @@ li {
   border-bottom: 1px solid #f0f0f0;
 }
 
-/* --- FIX 2: STRAIGHT LEFT ALIGNMENT --- */
+
 .text-group {
   display: flex;
   gap: 15px;
   align-items: center;
   cursor: pointer;
-  /* Removed flex-grow: 1 here. This keeps it on the left. */
+ 
 }
 
 .completed span { text-decoration: line-through; color: #aaa; }
 .text-group span { font-size: 18px; color: #555; }
 
-/* --- GREEN CHECKS --- */
+
 input[type="checkbox"] {
   accent-color: #4caf50;
   width: 20px;
@@ -97,7 +97,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* --- RED CROSSES --- */
+
 .delete-btn {
   background: #ff5252;
   padding: 6px 12px;
