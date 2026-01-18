@@ -1,15 +1,15 @@
 # Aplikacja TO-DO z synchronizacją w chmurze 
 
-Projekt zrealizowany w ramach praktyk zawodowych. Jest to aplikacja typu "Lista Zadań" z funkcją synchronizacji danych w czasie rzeczywistym między urządzeniami (Real-Time Cloud Sync).
+Projekt zrealizowany w ramach praktyk zawodowych. Jest to aplikacja webowa do zarządzania zadaniami, wykorzystująca chmurę do przechowywania danych w czasie rzeczywistym.
 
 1. Analiza Wymagań 
 
 Cel projektu:
-Stworzenie narzędzia zwiększającego produktywność, eliminującego problem braku spójności danych między urządzeniami użytkownika (np. laptop i telefon).
+Stworzenie aplikacji typu "Lista Zadań", która przechowuje dane w zewnętrznej bazie danych (chmurze), zapewniając trwałość danych niezależnie od urządzenia lokalnego.
 
 Wymagania Funkcjonalne:
 Dodawanie zadań: Użytkownik może wprowadzić tekst i dodać go do listy.
-Synchronizacja Real-Time: Zmiany są natychmiast widoczne na innych urządzeniach (wykorzystanie WebSocket).
+Synchronizacja Real-Time: Natychmiastowa synchronizacja danych. Zmiany dokonane w jednej karcie przeglądarki pojawiają się natychmiast w innych otwartych instancjach aplikacji.
 Oznaczanie statusu: Interaktywne checkboxy zmieniają stan zadania na "wykonane" (zmienia się styl graficzny).
 Usuwanie: Możliwość trwałego usunięcia zadania z bazy danych.
 Trwałość danych: Zadania są zapisywane w chmurze i nie znikają po odświeżeniu strony.
@@ -55,11 +55,9 @@ Aby uruchomić projekt lokalnie:
 
 Aplikacja przeszła pomyślnie następujące scenariusze testowe:
 
-| ID | Test | Wynik |
-| **01** | Synchronizacja między dwoma oknami przeglądarki | ✅ Pozytywny |
-| **02** | Zapisywanie zadań w bazie Firestore | ✅ Pozytywny |
-| **03** | Trwałość danych po odświeżeniu (F5) | ✅ Pozytywny |
-| **04** | Poprawne wyświetlanie na PC i Mobile | ✅ Pozytywny |
-| **05** | Obsługa usuwania i edycji statusu | ✅ Pozytywny |
+Trwałość danych: Zadanie dodane do listy pozostaje na niej po ponownym uruchomieniu przeglądarki.
+Synchronizacja: Otwarcie aplikacji w dwóch oknach przeglądarki obok siebie pozwala obserwować zmiany w czasie rzeczywistym.
+Operacje CRUD: Poprawne dodawanie, odczyt, edycja statusu (checkbox) i usuwanie rekordów z bazy Firebase.
+
 
 
