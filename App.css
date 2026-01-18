@@ -1,0 +1,112 @@
+/* --- BASE SETTINGS --- */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background: white;
+  width: 450px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+/* --- FIX 1: TITLE ON ONE LINE --- */
+h1 {
+  text-align: center;
+  color: #333;
+  font-weight: 800;
+  display: flex; /* Keeps icon and text together */
+  justify-content: center; /* Centers the whole block */
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem; /* Slightly smaller to ensure one line */
+  margin-bottom: 30px;
+  white-space: nowrap; /* Forces one line */
+}
+
+/* --- THE INPUT BAR --- */
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus { outline: none; border-color: #5c6bc0; }
+
+button[type="submit"] {
+  padding: 12px 25px;
+  background: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button[type="submit"]:hover { background: #3f51b5; }
+
+/* --- LIST --- */
+ul { list-style: none; padding: 0; }
+
+li {
+  display: flex;
+  justify-content: space-between; /* Pushes text left, button right */
+  align-items: center;
+  padding: 15px 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- FIX 2: STRAIGHT LEFT ALIGNMENT --- */
+.text-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  cursor: pointer;
+  /* Removed flex-grow: 1 here. This keeps it on the left. */
+}
+
+.completed span { text-decoration: line-through; color: #aaa; }
+.text-group span { font-size: 18px; color: #555; }
+
+/* --- GREEN CHECKS --- */
+input[type="checkbox"] {
+  accent-color: #4caf50;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* --- RED CROSSES --- */
+.delete-btn {
+  background: #ff5252;
+  padding: 6px 12px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.delete-btn:hover { background: #d32f2f; }
